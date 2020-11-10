@@ -499,7 +499,13 @@
             },
             methods: {
                 getWindowSize: function() {
-                    this.$el && (this.windowHeight = this.$el.clientHeight, this.windowWidth = this.$el.clientWidth);
+                    
+                    var element = document.getElementById('pills-tabContent');
+                    var positionInfo = element.getBoundingClientRect();
+                    var height = positionInfo.height;
+                    var width = positionInfo.width;
+
+                    this.$el && (this.windowHeight = this.$el.clientHeight, this.windowWidth = width);
                 }
             }
         };
